@@ -12,7 +12,6 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         isLogin();
-        $this->load->model('invoice_model');
     }
 
     public function index()
