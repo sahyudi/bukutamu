@@ -23,6 +23,9 @@ class Kunjungan_model extends CI_Model
             $this->db->where("(K.tanggal >='$start_date' AND K.tanggal <= '$end_date')");
         }
 
+        if (!in_array($this->session->userdata('jabatan'), ['Admin', 'Staf'])) {
+            $this->db->where('K.pejabat_id', $this->session->userdata('id'));
+        }
         $this->db->join('users P', 'P.id = K.pejabat_id', 'left');
         $result = $this->db->get($this->kunjungan . ' K');
         return $result;

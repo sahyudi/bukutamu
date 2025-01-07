@@ -1,8 +1,8 @@
 <?php
-$create = in_array($this->session->userdata('jabatan'), ['Admin', 'staf']) ? true : false;
-$update = in_array($this->session->userdata('jabatan'), ['Admin', 'staf']) ? true : false;
-$delete = in_array($this->session->userdata('jabatan'), ['Admin', 'staf']) ? true : false;
-$konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'staf']) ? true : false;
+$create = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ? true : false;
+$update = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ? true : false;
+$delete = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ? true : false;
+$konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ? true : false;
 ?>
 
 
@@ -252,10 +252,15 @@ $konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'staf']) ?
                             <?php } ?>
                             <?php if ($update) { ?>
                                 if (row.status == 'Permintaan') {
-                                    btnKonfirmasi = `<a class="dropdown-item has-icon" href="javascript:;" data-toggle="modal" data-target="#modal-konfirmasi" onclick="edit_data(${row.id})"> <i class="fas fa-edit" style="margin-top: 1px"></i> Konfirmasi
-                                    </a>`
                                     btnEdit = `<a class="dropdown-item has-icon" href="${baseUrl}kunjungan/edit/${row.uuid}">
                                         <i class="fas fa-edit" style="margin-top: 1px"></i> Edit Order
+                                    </a>`
+                                }
+
+                            <?php } ?>
+                            <?php if ($konfirmasi) { ?>
+                                if (row.status == 'Permintaan') {
+                                    btnKonfirmasi = `<a class="dropdown-item has-icon" href="javascript:;" data-toggle="modal" data-target="#modal-konfirmasi" onclick="edit_data(${row.id})"> <i class="fas fa-edit" style="margin-top: 1px"></i> Konfirmasi
                                     </a>`
                                 }
 

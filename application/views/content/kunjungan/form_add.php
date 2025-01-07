@@ -75,7 +75,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="float-left">
-                        <a href="<?= base_url('invoice') ?>" class="btn btn-outline-danger py-2 px-4 rounded-pill">
+                        <a href="<?= base_url('kunjungan') ?>" class="btn btn-outline-danger py-2 px-4 rounded-pill">
                             <i class="fas fa-arrow-left"></i>&nbsp; Kembali
                         </a>
                     </div>

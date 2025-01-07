@@ -157,9 +157,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                     <i class="fas fa-user"></i><span>Kunjungan</span>
                                 </a>
                             </li>
-                            <li class="nav-item ">
-                                <a href="<?= base_url('users') ?>" class="nav-link"><i class="fas fa-users"></i><span>User</span></a>
-                            </li>
+                            <?php if ($this->session->userdata('jabatan') == 'Admin') { ?>
+                                <li class="nav-item ">
+                                    <a href="<?= base_url('users') ?>" class="nav-link"><i class="fas fa-users"></i><span>User</span></a>
+                                </li>
+                            <?php } ?>
 
                         </ul>
                     </ul>
