@@ -1,0 +1,2 @@
+1. composer install
+2. buat file baru di application/config/config.php dan database.php dan ambil source dari file .txt masing masing

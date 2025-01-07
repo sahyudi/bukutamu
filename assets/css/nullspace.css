@@ -1,0 +1,26 @@
+.dataTables_length select.form-control{
+	display: inline-block !important;
+	width: auto !important;
+}	
+
+.dataTables_length label{
+	font-weight: bold;
+}	
+
+.dataTables_filter{
+	float: right !important;
+}
+.dataTables_filter label{
+	font-weight: bold;
+}
+.dataTables_filter input.form-control{
+	display: inline-block !important;
+	margin-left: 5px;
+	width: auto !important;
+}
+.pagination{
+	    float: right !important;
+}
+/*.card-body{
+	padding-bottom: 10px !important;
+} */
