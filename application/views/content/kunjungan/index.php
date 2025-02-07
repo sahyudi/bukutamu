@@ -244,10 +244,13 @@ $konfirmasi = (!in_array($this->session->userdata('jabatan'), ['Staf'])) ? true 
                                         <i class="fas fa-trash" style="margin-top: 1px"></i> Hapus
                                     </a>`
                             <?php } ?>
+                            const btnCetak = `<a class="dropdown-item has-icon" target="_blank" href="${baseUrl}kunjungan/cetak/${row.id}">
+                                <i class="fas fa-print" style="margin-top: 1px"></i> Cetak
+                            </a>`
                             <?php if ($update) { ?>
                                 if (row.status == 'Permintaan') {
-                                    btnEdit = `<a class="dropdown-item has-icon" href="${baseUrl}kunjungan/edit/${row.uuid}">
-                                        <i class="fas fa-edit" style="margin-top: 1px"></i> Edit Order
+                                    btnEdit = `<a class="dropdown-item has-icon" href="${baseUrl}kunjungan/edit/${row.id}">
+                                        <i class="fas fa-edit" style="margin-top: 1px"></i> Edit
                                     </a>`
                                 }
 
@@ -264,6 +267,7 @@ $konfirmasi = (!in_array($this->session->userdata('jabatan'), ['Staf'])) ? true 
                                             <button class="btn btn-outline-primary dropdown-toggle rounded-pill" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window">Select
                                             </button>
                                             <div class="dropdown-menu">
+                                                ${btnCetak}
                                                 ${btnKonfirmasi}
                                                 ${btnEdit}
                                                 ${btnDelete}

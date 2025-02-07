@@ -36,6 +36,30 @@ class Kunjungan extends CI_Controller
         $this->load->view('template/top/main', $data);
     }
 
+    public function cetak($id)
+    {
+        $result = $this->kunjungan_model->get_kunjungan($id, false)->row();
+        $data = [
+            'active'    => 'kunjungan',
+            'title'     => "Cetak Kunjungan",
+            'data'      => $this->kunjungan_model->get_kunjungan($id, false)->row()
+        ];
+        $this->load->view('content/kunjungan/cetak', $data);
+    }
+    public function edit($id)
+    {
+
+        $data = [
+            'active'    => 'kunjungan',
+            'title'     => "Tambah Kunjungan",
+            'data'      => $this->kunjungan_model->get_kunjungan($id, false)->row(),
+            'pejabat'     => $this->user_model->getPejabat(),
+            'content'   => 'content/kunjungan/form_edit'
+        ];
+        $this->load->view('template/top/main', $data);
+    }
+
+
     function get_data()
     {
 

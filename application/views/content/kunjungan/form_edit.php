@@ -14,45 +14,44 @@
                     <p class="text-muted text-small">Informasi Kunjungan</p>
                     <div class="dropdown-divider"></div>
                     <div class="row">
-                        <input type="text" id="id" name="id" value="<?= $kunjungan->id ?>" hidden>
+                        <input type="text" id="id" name="id" value="<?= $data->id ?>" hidden>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">NIK</label>
-                                <input type="text" name="nik" id="nik" class="form-control" value="<?= $kunjungan->nik ?>" placeholder="input nik" required>
+                                <input type="text" name="nik" id="nik" class="form-control" value="<?= $data->nik ?>" placeholder="input nik" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">Nama Tamu</label>
-                                <input type="text" name="nama" id="nama" class="form-control" placeholder="input nama tamu" value="<?= $kunjungan->nama_tamu ?>" required>
+                                <input type="text" name="nama" id="nama" class="form-control" placeholder="input nama tamu" value="<?= $data->nama_tamu ?>" required>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">HP</label>
-                                <input type="text" name="nohp" id="nohp" value="<?= $kunjungan->nohp ?>" class="form-control" placeholder="input nohp" required>
+                                <input type="text" name="nohp" id="nohp" value="<?= $data->nohp ?>" class="form-control" placeholder="input nohp" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">Tanggal</label>
-                                <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= date('Y-m-d') ?>" value="<?= $kunjungan->tanggal ?>" required="">
+                                <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= date('Y-m-d') ?>" value="<?= $data->tanggal ?>" required="">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">Jam</label>
-                                <input type="time" class="form-control" id="jam" name="jam" value="<?= $kunjungan->jam ?>" value="" required="">
+                                <input type="time" class="form-control" id="jam" name="jam" value="<?= $data->jam ?>" required="">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="required">Pejabat</label>
                                 <select class="form-control selectpicker" style="width: 100%" id="pejabat" name="pejabat" data-live-search="true" required>
-                                    <option value="" selected disabled>:: Pilih Pejabat ::</option>
                                     <?php foreach ($pejabat as $key => $value) { ?>
-                                        <option value="<?= $value->id ?>" <?= $kunjungan->pejabat_id == $value->id ? 'selected' : '' ?>><?= $value->nama ?></option>
+                                        <option value="<?= $value->id ?>" <?= $data->pejabat_id == $value->id ? 'selected' : '' ?>><?= $value->nama ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -61,7 +60,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="required">Perihal</label>
-                                <textarea class="form-control" id="perihal" name="perihal" required><?= $kunjungan->perihal ?></textarea>
+                                <textarea class="form-control" id="perihal" name="perihal" required><?= $data->perihal ?></textarea>
                             </div>
                         </div>
 
