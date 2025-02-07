@@ -23,7 +23,7 @@ $konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ?
                 <h4>Kujungan Tamu</h4>
                 <div class="float-right">
                     <?php if ($create) { ?>
-                        <a href="<?= base_url('invoice/add') ?>" class="btn btn-outline-primary rounded-pill px-4 py-2"><i class="fas fa-plus-circle"></i>&nbsp; Tambah</a>
+                        <a href="<?= base_url('kunjungan/add') ?>" class="btn btn-outline-primary rounded-pill px-4 py-2"><i class="fas fa-plus-circle"></i>&nbsp; Tambah</a>
                     <?php } ?>
                 </div>
             </div>
@@ -250,6 +250,9 @@ $konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ?
                                         <i class="fas fa-trash" style="margin-top: 1px"></i> Hapus
                                     </a>`
                             <?php } ?>
+                            const btnCetak = `<a class="dropdown-item has-icon" target="_blank" href="${baseUrl}kunjungan/cetak/${row.id}">
+                                <i class="fas fa-print" style="margin-top: 1px"></i> Cetak
+                            </a>`
                             <?php if ($update) { ?>
                                 if (row.status == 'Permintaan') {
                                     btnEdit = `<a class="dropdown-item has-icon" href="${baseUrl}kunjungan/edit/${row.uuid}">
@@ -270,7 +273,7 @@ $konfirmasi = in_array($this->session->userdata('jabatan'), ['Admin', 'Staf']) ?
                                             <button class="btn btn-outline-primary dropdown-toggle rounded-pill" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-boundary="window">Select
                                             </button>
                                             <div class="dropdown-menu">
-                                                ${btnKonfirmasi}
+                                                ${btnCetak}
                                                 ${btnEdit}
                                                 ${btnDelete}
                                             </div>
